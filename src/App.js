@@ -1,4 +1,4 @@
-import REACT from 'react';
+
 import Header from './Header';
 import SleepData from './SleepData';
 import Footer from './Footer';
