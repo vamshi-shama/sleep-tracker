@@ -1,23 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 function SleepData() {
+  const [sleepData, setSleepData] = useState(null);
+
+  useEffect(() => {
+    const fetchSleepData = async () => {
+      const API_KEY = 'your_api_key';
+      const response = await fetch(`https://api.fitbit.com/1/user/-/sleep/date/2022-07-07.json`, {
+        headers: {
+          'Authorization': `Bearer ${API_KEY}`
+        }
+      });
+      const sleepData = await response.json();
+      setSleepData(sleepData);
+    };
+    fetchSleepData();
+  }, []);
+
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th>Duration</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>12:00 AM</td>
-          <td>6:00 AM</td>
-          <td>6 hours</td>
-        </tr>
-      </tbody>
-    </table>
+    <div>
+      { sleepData ? (
+        <div>
+          {}
+        </div>
+      ) : (
+        <div>Loading...</div>
+      )}
+      
+    </div>
   );
 }
 
