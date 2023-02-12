@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import SleepDataTable from './SleepDataTable';
 
 function SleepData() {
   const [sleepData, setSleepData] = useState(null);
@@ -21,9 +21,7 @@ function SleepData() {
   return (
     <div>
       { sleepData ? (
-        <div>
-          {}
-        </div>
+        <SleepDataTable sleepData={sleepData} />
       ) : (
         <div>Loading...</div>
       )}

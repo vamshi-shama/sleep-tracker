@@ -1,4 +1,3 @@
-import SleepDataTable from './SleepDataTable';
 import Header from './Header';
 import SleepData from './SleepData';
 import Footer from './Footer';
@@ -11,7 +10,6 @@ function App() {
       <Header />
       <SleepData />
       <Footer />
-      <SleepDataTable />
     </div>
   );
 }
